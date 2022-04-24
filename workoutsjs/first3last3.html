@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript program</title>
+</head>
+<body>
+	<h1>JavaScript program to create a new String from a given string the first 3 characters and the last 3 characters of a string and adding them together. The String length must be 3 or more, if not, the original string is returned</h1>
+</body>
+<script>
+	function first3_last3(text){
+		var a = text.substring(0,3);
+		var b = text.substring(text.length-3,text.length+1);
+		if(text.length<3){
+			return text;}
+		else{
+			return a+b;}}
+
+	document.write("<h3>"+"Input - mirth3 | Output - "+first3_last3("mirth3")+"</h3>");
+	document.write("<h3>"+"Input - ula | Output - "+first3_last3("ula")+"</h3>");
+</script>
+</html>

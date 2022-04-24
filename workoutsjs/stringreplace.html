@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript program</title>
+</head>
+<body>
+	<h1>Javascript program to replace every character in a given string with the character following it in the alphabet</h1>
+</body>
+<script>
+	function replace(text){
+	var c = text.split('');
+	for(var i=0;i<c.length;i++){
+		switch(c[i]){
+			case ' ':
+			break;
+			case 'Z':
+			c[i] = 'A';
+			case 'z':
+			c[i] = 'a'
+			default :
+			c[i] = String.fromCharCode(1+c[i].charCodeAt(0));}
+
+	}return c.join('');}
+	document.write("<h3>"+"Input - javascript | Output - "+replace("javascript")+"<h3>")
+
+
+</script>
+</html>

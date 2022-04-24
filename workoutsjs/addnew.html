@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript program</title>
+</head>
+<body>
+	<h1>JavaScript programs to create a new String adding “New!” in front of a given String. If the given String begins with “New!” already then return the original String</h1>
+</body>
+<script>
+	function addnew(text){
+		var a = text.substring(0,4);
+		if(a=="New!"){
+			return text;}
+		else{
+			return "New!"+text;}
+	}
+	document.write("<h3>"+"Input - New! | Output - "+addnew("New!")+"</h3>");
+	document.write("<h3>"+"Input - Miruthula | Output - "+addnew("miruhtula")+"</h3>");
+</script>
+</html>

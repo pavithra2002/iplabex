@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript program</title>
+</head>
+<body>
+	<h1>JavaScript Program to get the current data</h1>
+</body>
+<script>
+	function current_date(sep){
+	today = new Date();
+	var date = today.getDate();
+	var month = today.getDay();
+	var year = today.getFullYear();
+        if(date<10){
+		date = "0"+date;}
+	if(month<10){
+		month = "0"+month;}
+	return(date+sep+month+sep+year);}
+	document.write("<h3>"+current_date('/')+"</h3>")
+	document.write("<h3>"+current_date('-')+"</h3>")
+
+</script>
+</html> 

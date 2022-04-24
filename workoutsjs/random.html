@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript program</title>
+</head>
+<body>
+	<h1>JavaScript program to change the background color by generating a random hexadecimal color code</h1>
+	<center><h1>
+  	<button id="a">Generate New Random Color</button><br>
+  	<span id="color1"></span>
+	</h1></center>
+</body>
+<script>
+    function setbg(){
+    var letters = "0123456789ABCDEF";
+    var color = '#';
+    for (var i = 0; i < 6; i++)
+       color += letters[(Math.floor(Math.random() * 16))];
+    document.body.style.backgroundColor = color;
+
+    color1.innerHTML = color;}
+    a.addEventListener("click", setbg);
+
+    setbg();
+
+</script>
+
+</html> 
