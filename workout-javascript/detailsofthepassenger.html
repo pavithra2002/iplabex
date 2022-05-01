@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript program </title>
+	</head>
+	<body>
+		<form onsubmit = "validate()" >
+			<h2>Passenger Details</h2>
+			Name : <input type="text" id="a"></input><br><br>
+			Age : <input type="text" id="b"></input><br><br>
+			Email Id : <input type="text" id="c"></input><br><br>
+			Gender : <input type="text" id="d"></input><br><br>
+			<input type="submit" value="Submit" ></input>
+		</form> 
+	</body>
+	<script>
+		function validate(){
+			let age = document.getElementById("b").value;
+			if(isNaN(age)||age>100||age<1){
+				alert("Enter the age correctly");
+				return false;}
+			let mail = document.getElementById("c").value;
+			let p1 = /^[A-Za-z]+@[A-Za-z]+.[A-Za-z]/i;
+			if(!mail.match(p1)){
+				alert("Enter the mail correctly");
+				return false;}
+			let gender = document.getElementById("d").value;
+			let p2 = /[M/F]/i;
+			if(!gender.match(p2)){
+				alert("Enter the gender correctly");
+				return false;}
+			
+		}
+	</script>
+</html>

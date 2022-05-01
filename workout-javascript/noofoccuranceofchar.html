@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript program </title>
+	</head>
+	<body>
+		<form onsubmit="occurence();">
+			<h2>Enter the Text</h2><br>
+			<textarea rows="10" cols="10" id="a"></textArea><br>
+			Enter the search character : <input type="text" id="b"></input><br>
+			<input type="submit" value="check" ></input>
+		</form>  
+	</body>
+	<script>
+		function occurence(){
+			let text = document.getElementById("a").value;
+			let char = document.getElementById("b").value;
+			let count = 0;
+			for(let i=0;i<text.length;i++){
+				if(text.charAt(i)==char){
+					count = count + 1;
+				}
+			} 
+			alert("The number of character in the text is "+count);
+		}
+			
+	</script>
+</html>

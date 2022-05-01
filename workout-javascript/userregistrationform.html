@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript program </title>
+	</head>
+	<body>
+		<form onsubmit = "validate()" >
+			<h2> User Registration Form </h2>
+			FirstName : <input type="text" id="a"></input><br><br>
+			LastName : <input type="text" id="b"></input><br><br>
+			Email : <input type="text" id="c"></input><br><br>
+			Address : <input type="text" id="d"></input><br><br>
+			City : <input type="text" id="e"></input><br><br>
+			State : <input type="text" id="f"></input><br><br>
+			Country : <input type="text" id="g"></input><br><br>
+			Pincode : <input type="text" id="h"></input><br><br>
+			UserName : <input type="text" id="i"></input><br><br>
+			Password : <input type="text" id="j"></input><br><br>
+			<input type="submit" value="Submit"></input>
+		</form> 
+	</body>
+	<script>
+		function validate(){
+			let firstname = document.getElementById("a").value;
+			if(firstname==""){
+				alert("Enter the Firstname");
+				return false;}
+			let lastname = document.getElementById("b").value;
+			if(lastname==""){
+				alert("Enter the Lastname");
+				return false;}
+			let city = document.getElementById("e").value;
+			if(city==""){
+				alert("Enter the City");
+				return false;}
+			let country = document.getElementById("g").value;
+			if(country==""){
+				alert("Enter the Country");
+				return false;}
+			let username = document.getElementById("i").value;
+			if(username==""){
+				alert("Enter the Username");
+				return false;}
+			let password = document.getElementById("j").value;
+			if(password==""){
+				alert("Enter the Password");
+				return false;}
+			let pincode = document.getElementById("h").value;
+			let p1 = /^[0-9]{6}$/;
+			if(!pincode.match(p1)){
+				alert("Pincode should contain exactly 6 numerics");
+				return false;}
+			let state = document.getElementById("f").value;
+			let p2 = /^[A-Za-z]{2}$/;
+			if(!state.match(p2)){
+				alert("State should contain exactly 2 characters");
+				return false;}
+			let mail = document.getElementById("c").value;
+			let p3 = /^[A-Za-z]+@[A-Za-z]+.[A-Za-z]/i;
+			if(!mail.match(p3)||mail.length<6){
+				alert("Enter the mail correctly");
+				return false;}
+		}
+	</script>
+</html>
