@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+    </head>
+    <body>
+        
+    <center>
+        
+        <div >
+            Enter ID<input type="text" id="1">
+            <p id="2"></p>
+            <button onclick="load()">Get Info</button>
+        </div>
+       
+    </center>
+        <script>
+            function load(){
+            var obj=new XMLHttpRequest();
+            obj.onreadystatechange= function (){
+                if(this.readyState === 4 && this.status === 200){
+                    var a=this.responseXML;
+                    students(a);
+                }
+                
+               };
+               
+              obj.open("GET","stud_info.xml",true);
+              obj.send();
+    
+    }
+    function students( list){
+        var names = list.getElementsByTagName("student");
+        var num=document.getElementById("1").value;
+        var flag=0;
+        var table="<table border='2px' > <tr><th>ID</th><td>";
+        for(var j = 0; j < names.length; j++) {
+            
+            
+            if(num.match(names[j].getElementsByTagName("rollno")[0].childNodes[0].nodeValue)){
+                table+= names[j].getElementsByTagName("rollno")[0].childNodes[0].nodeValue+"</td></tr><tr><th>NAME</th><td>" ;
+                table+= names[j].getElementsByTagName("name")[0].childNodes[0].nodeValue +"</td></tr><tr><th>DOB</th><td>";
+                table+=names[j].getElementsByTagName("dob")[0].childNodes[0].nodeValue +"</td></tr><tr><th>INTERNAK MARK</th><td>" ;
+                table+=names[j].getElementsByTagName("imark")[0].childNodes[0].nodeValue +"</td></tr><tr><th>EXTERNAL MARK</th><td>";
+                table+=names[j].getElementsByTagName("emark")[0].childNodes[0].nodeValue+"</td></tr></table>" ;
+                document.getElementById("2").innerHTML=table;
+                flag=1;
+            }
+       
+       }
+       // console.log(names);
+       if(flag===0){
+           document.getElementById("ids").innerHTML="Invalid Id";
+       }
+    }
+            
+        </script>
+    </body>
+</html>
